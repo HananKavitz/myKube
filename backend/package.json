@@ -1,17 +1,24 @@
 {
-  "name": "cv-backend",
+  "name": "kubernetes-demo",
   "version": "1.0.0",
-  "description": "Backend for the CV app",
+  "description": "Backend for the kubernetes-demo",
   "main": "server.js",
+  "nodemonConfig": {
+    "verbose": true,
+    "ignore": [ "node_modules/*", "docs/*"]
+
+  },
   "dependencies": {
     "express": "^4.16.3",
+    "morgan": "^1.9.1",
     "winston": "^3.0.0-rc6"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "run":  "/usr/local/bin/nodemon server.js",
     "start": "node server.js"
   },
-  "author": "",
+  "author": "Hanan Kavitz",
   "license": "ISC"
 }

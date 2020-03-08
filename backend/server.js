@@ -1,12 +1,13 @@
 const express = require('express');
 const logger = require('winston');
+const morgan = require('morgan');
+const path = require('path');
 const app = express();
 const port = 5000;
 
-app.get('/', (request, response) => {
-	response.send(`Hello, I'm alive`);
-	logger.info('Responded to GET request on /')
-});
+app.use(morgan('dev'));
+app.use(express.static(path.join(__dirname ,'/../frontend/build')));
+
 
 app.get('/api/me', (request, response) => {
 	response.send('{"name": "Arthur Dent", "location": "Earth"}');
