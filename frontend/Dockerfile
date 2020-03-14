@@ -5,6 +5,9 @@ FROM node:latest
 RUN mkdir -p /app
 WORKDIR /app
 
+
+COPY tsconfig.json/. /app/tsconfig.json
+COPY public/. /app/public
 # Install app dependencies
 COPY ./package.json /app
 COPY server.js /app
@@ -12,7 +15,6 @@ RUN npm install
 
 # Bundle app source
 COPY src/. /app/src
-COPY public/. /app/public
 
 # Build and optimize react app
 RUN npm run build
