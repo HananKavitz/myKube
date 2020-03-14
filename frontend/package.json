@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.1",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-redux": "^7.1.7",
     "express": "^4.16.4",
     "http-proxy": "^1.17.0",
     "path": "^0.12.7",
@@ -12,24 +17,34 @@
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
+    "typescript": "^3.8.3",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
-    "custom-react-scripts": "^0.2.2",
     "prop-types": "^15.6.1",
-    "redux-thunk": "^2.3.0",
-    "react-scripts": "1.1.4"
+    "react-scripts": "^3.4.0",
+    "redux-thunk": "^2.3.0"
   },
-  "proxy": {
-    "/api": {
-      "target": "http://localhost:5000"
-    }
-  },
+  "proxy": "http://localhost:5000",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run build:ts && react-scripts build",
+    "build:ts": "tsc --build tsconfig.json",
+    "build:ts:watch": "npm run build:ts --watch",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "production": "node server.js"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
