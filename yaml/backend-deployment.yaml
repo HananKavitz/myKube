@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: backend
-        image: gcr.io/myfirstnodejsapp-238305/backend:last
+        image: gcr.io/myfirstnodejsapp-238305/backend:backend-5
         ports:
         - containerPort: 5000

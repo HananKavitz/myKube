@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: gcr.io/myfirstnodejsapp-238305/frontend:last
+        image: gcr.io/myfirstnodejsapp-238305/frontend:frontend-5
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
